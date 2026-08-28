@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Communi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>My Impact Dashboard</h1>
+    <a href="/explore">Explore Events</a> | <a href="/create">Create Event</a> | <a href="/logout">Logout</a>
+    <hr>
+    
+    <h2>Events I'm Organizing:</h2>
+    {% if my_events %}
+        <ul>
+        {% for event in my_events %}
+            <li><strong>{{ event.title }}</strong> - {{ event.location }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't created any events yet.</p>
+    {% endif %}
+
+    <h2>Events I'm Attending:</h2>
+    {% if joined_events %}
+        <ul>
+        {% for event in joined_events %}
+            <li><strong>{{ event.title }}</strong> - {{ event.location }}</li>
+        {% endfor %}
+        </ul>
+        <p><strong>Total Impact:</strong> {{ joined_events|length }} Events Attended!</p>
+    {% else %}
+        <p>You haven't joined any events yet.</p>
+    {% endif %}
+</body>
+</html>
