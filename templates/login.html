@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Communi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>User Login</h1>
+    <p>Enter an email to access your dashboard and create events.</p>
+    <form method="POST">
+        <input type="email" name="email" placeholder="student@demo.com" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html> 
