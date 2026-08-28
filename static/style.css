@@ -1,0 +1,187 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #daf2e0; /* Your custom green background */
+    color: #1e293b;
+    max-width: 650px; /* This is the magic line that centers the app */
+    margin: 0 auto; 
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px; /* Spaces out your top links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #96a6ec; /* Your custom button color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4c77ed; /* Your custom hover color */
+}
+
+
+form {
+    background: rgba(237, 237, 238, 0.719); /* Your custom form background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Keeps form text neatly aligned left */
+    box-sizing: border-box;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+
+.event-card {
+    background: white;
+    border-left: 5px solid #2563eb;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Keeps card text cleanly aligned left */
+}
+
+.event-card h3 {
+    margin-top: 0;
+}
+
+
+ul {
+    background: white;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+
+
+/* 
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #daf2e0;
+    color: #1e293b;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    color: #0f172a;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+}
+
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #96a6ec;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4c77ed;
+}
+
+
+form {
+    background: rgba(237, 237, 238, 0.719);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+
+.event-card {
+    background: white;
+    border-left: 5px solid #2563eb;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding: 40px 20px;
+    
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
