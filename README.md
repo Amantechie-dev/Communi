@@ -11,5 +11,5 @@ Communi    is a centralized,  easy-to -use web application designed to connect e
 
 1. **Clone  the repository:**
    ```bash
-   git clone <your-github-repo-url>
-   cd communi-mvp
+   git clone <https://github.com/Amantechie-dev/Communi>
+   cd communi
