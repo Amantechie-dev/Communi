@@ -65,14 +65,14 @@ body {
 }
 
 .btn:hover {
-    background: #4338ca;
+    background: #4c8acb;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 .btn-secondary {
     background: #e0e7ff;
-    color: #4f46e5;
+    color: #3368A0;
 }
 
 .btn-secondary:hover {
@@ -124,7 +124,7 @@ input, textarea {
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #4f46e5;
+    border-color: #3368A0;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
@@ -136,7 +136,7 @@ input:focus, textarea:focus {
 }
 
 .stat-box {
-    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    background: linear-gradient(135deg, #6f7c8a, #536786);
     color: white;
     padding: 25px;
     border-radius: 12px;
@@ -163,11 +163,35 @@ input:focus, textarea:focus {
 
 .badge {
     background: #e0e7ff;
-    color: #3730a3;
+    color: #386ea8;
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
     display: inline-block;
     margin-bottom: 10px;
+}
+/* Apply this to the main header element wrapping the logo and the links */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Pushes the logo to the left and links to the right */
+    align-items: center; /* Vertically centers all items */
+    padding: 15px 20px; /* Gives the header some breathing room from the screen edges */
+    box-sizing: border-box;
+}
+
+/* Apply this to the container holding 'Dashboard' and '+ Host Event' */
+.nav-actions {
+    display: flex;
+    flex-direction: column; /* Stacks the text and button neatly on smaller screens */
+    align-items: flex-end; /* Aligns them to the right */
+    gap: 8px; /* Adds vertical space so they stop overlapping */
+}
+
+/* Optional: If you want them side-by-side instead of stacked */
+.nav-actions-inline {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 15px; /* Adds horizontal space between Dashboard and the button */
 }
