@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +13,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Host a Community Event</h1>
-    <form method="POST">
-        <input type="text" name="title" placeholder="Event Title (e.g., Park Cleanup)" required><br><br>
-        <textarea name="description" placeholder="What will volunteers be doing? and also thier qualification." required></textarea><br><br>
-        <input type="text" name="location" placeholder="City or exact address" required><br><br>
-        <button type="submit">Publish Event</button>
-    </form>
-    <br>
-    <a href="/dashboard">Cancel and return to Dashboard</a>
+    <nav class="navbar">
+        <a href="/" class="logo"> Communi</a>
+        <div class="nav-links">
+            <a href="/explore">Explore</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 600px;">
+        <h2>Host a Community Event</h2>
+        <p style="color: #6b7280; margin-bottom: 25px;">Fill out the details below to broadcast your initiative to local volunteers instantly.</p>
+        
+        <form method="POST" class="card">
+            <label>Event Title</label>
+            <input type="text" name="title" placeholder="e.g., Downtown Park Cleanup" required>
+            
+            <label>Location / Address</label>
+            <input type="text" name="location" placeholder="e.g., 123 Central Park Blvd, Delhi" required>
+            
+            <label>Event Description & Requirements</label>
+            <textarea name="description" rows="4" placeholder="What will volunteers be doing? Are there any specific qualifications needed?" required></textarea>
+            
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Publish Event</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -7,31 +7,57 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>My Impact Dashboard</h1>
-    <a href="/explore">Explore Events</a> | <a href="/create">Create Event</a> | <a href="/logout">Logout</a>
-    <hr>
-    
-    <h2>Events I'm Organizing:</h2>
-    {% if my_events %}
-        <ul>
-        {% for event in my_events %}
-            <li><strong>{{ event.title }}</strong> - {{ event.location }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>You haven't created any events yet.</p>
-    {% endif %}
+    <nav class="navbar">
+        <a href="/" class="logo"> Communi</a>
+        <div class="nav-links">
+            <a href="/explore">Explore</a>
+            <a href="/create">Create Event</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
 
-    <h2>Events I'm Attending:</h2>
-    {% if joined_events %}
-        <ul>
-        {% for event in joined_events %}
-            <li><strong>{{ event.title }}</strong> - {{ event.location }}</li>
-        {% endfor %}
-        </ul>
-        <p><strong>Total Impact:</strong> {{ joined_events|length }} Events Attended!</p>
-    {% else %}
-        <p>You haven't joined any events yet.</p>
-    {% endif %}
+    <div class="container">
+        <h2 style="margin-bottom: 25px;">My Impact Dashboard</h2>
+        
+        <!-- Big Number Impact Stats -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h2>{{ joined_events|length }}</h2>
+                <p>Events Attended</p>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, #059669, #10b981);">
+                <h2>{{ my_events|length }}</h2>
+                <p>Events Organized</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Volunteer History (Attending)</h3>
+        {% if joined_events %}
+            <div style="display: grid; gap: 15px;">
+            {% for event in joined_events %}
+                <div class="card" style="padding: 20px; margin-bottom: 0;">
+                    <h4 style="margin: 0 0 5px 0; color: #111827;">{{ event.title }}</h4>
+                    <span style="color: #6b7280; font-size: 14px;"> {{ event.location }}</span>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p style="color: #6b7280;">You haven't joined any events yet. Head over to the Explore page to find opportunities!</p>
+        {% endif %}
+
+        <h3 style="margin-top: 40px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">My Initiatives (Organizing)</h3>
+        {% if my_events %}
+            <div style="display: grid; gap: 15px;">
+            {% for event in my_events %}
+                <div class="card" style="padding: 20px; margin-bottom: 0;">
+                    <h4 style="margin: 0 0 5px 0; color: #111827;">{{ event.title }}</h4>
+                    <span style="color: #6b7280; font-size: 14px;"> {{ event.location }}</span>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p style="color: #6b7280;">You haven't organized any events yet.</p>
+        {% endif %}
+    </div>
 </body>
 </html>

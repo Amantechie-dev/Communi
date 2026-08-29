@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>User Login</h1>
-    <p>Enter an email to access your dashboard and create events.</p>
-    <form method="POST">
-        <input type="email" name="email" placeholder="student@demo.com" required>
-        <button type="submit">Login</button>
-    </form>
+    <nav class="navbar">
+        <a href="/" class="logo"> Communi</a>
+    </nav>
+
+    <div class="container" style="max-width: 450px; margin-top: 60px;">
+        <div class="card" style="text-align: center;">
+            <h2>Welcome Back</h2>
+            <p style="color: #6b7280; margin-bottom: 25px;">Enter your student or organizer email to continue.</p>
+            
+            <form method="POST" style="text-align: left;">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="e.g., student@university.edu" required>
+                
+                <button type="submit" class="btn" style="width: 100%;">Access Platform</button>
+            </form>
+        </div>
+    </div>
 </body>
-</html> 
+</html>

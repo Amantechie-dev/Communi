@@ -1,35 +1,28 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communi</title>
+    <title>Communi - Volunteer Platform</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    
 </head>
 <body>
-    <h1>Welcome to Communi</h1>
-    <p>The smart volunteer platform connecting students with community needs.</p>
-    <a href="/login">Login to Start</a> | <a href="/explore">Explore Events</a>
+    <nav class="navbar">
+        <a href="/" class="logo"> Communi</a>
+        <div class="nav-links">
+            <a href="/login" class="btn">Sign In / Register</a>
+        </div>
+    </nav>
+
+    <div class="container" style="text-align: center; margin-top: 80px;">
+        <span class="badge">Next Gen Dev Platform</span>
+        <h1 style="font-size: 48px; color: #111827; margin-bottom: 15px;">Empowering Community Impact</h1>
+        <p style="font-size: 18px; color: #4b5563; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">
+            The smart volunteer platform connecting eager students with local community needs. Discover events, verify hours, and build your digital footprint.
+        </p>
+        <a href="/login" class="btn" style="font-size: 18px; padding: 15px 30px;">Get Started Now</a>
+        <a href="/explore" class="btn btn-secondary" style="font-size: 18px; padding: 15px 30px; margin-left: 10px;">View Live Feed</a>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-
-<html>
-<head>
-    <title>Communi </title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Welcome to Communi</h1>
-    <p>The smart volunteer platform connecting students with community needs.</p>
-    <a href="/login">Login to Start</a> | <a href="/explore">Explore Events</a>
-</body>
-</html> -->

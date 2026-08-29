@@ -7,22 +7,36 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Explore Local Opportunities</h1>
-    <a href="/dashboard">My Dashboard</a> | <a href="/create">Create Event</a>
-    <hr>
-    
-    {% if events %}
-        {% for event in events %}
-            <div class="event-card" >
-                <h3 style="margin: 0;">{{ event.title }}</h3>
-                <p><strong>Location:</strong> {{ event.location }}</p>
-                <p>{{ event.description }}</p>
-                <p><small>Organizer: {{ event.organizer_email }}</small></p>
-                <a href="/join/{{ event.id }}"><button>Join Event</button></a>
+    <nav class="navbar">
+        <a href="/" class="logo"> Communi</a>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/create" class="btn" style="color: white; margin-left: 20px;">+ Host Event</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Live Local Opportunities</h2>
+        <p style="color: #6b7280; margin-bottom: 30px;">Discover ways to give back to your neighborhood. Click join to automatically track your verified hours.</p>
+        
+        {% if events %}
+            {% for event in events %}
+                <div class="card">
+                    <span class="badge"> {{ event.location }}</span>
+                    <h3>{{ event.title }}</h3>
+                    <p style="color: #4b5563; line-height: 1.5;">{{ event.description }}</p>
+                    <p style="color: #9ca3af; font-size: 13px;">Organized by: {{ event.organizer_email }}</p>
+                    
+                    <a href="/join/{{ event.id }}" class="btn" style="margin-top: 10px;">Register & Join Event</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card" style="text-align: center; padding: 50px;">
+                <h3 style="color: #6b7280;">No active events right now.</h3>
+                <p>Be the first to create a community initiative!</p>
+                <a href="/create" class="btn" style="margin-top: 15px;">Host an Event</a>
             </div>
-        {% endfor %}
-    {% else %}
-        <p>No events found. Be the first to create one!</p>
-    {% endif %}
+        {% endif %}
+    </div>
 </body>
 </html>
