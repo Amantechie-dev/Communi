@@ -12,7 +12,13 @@
     <title>Create Event - Communi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body style="
+    background-image: url('{{ url_for('static', filename='80464156-8c7a-463e-8487-cc44bce53d6c.jpg') }}'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+">
     <nav class="navbar">
         <a href="/" class="logo"> Communi</a>
         <div class="nav-links">
@@ -37,7 +43,7 @@
             <textarea name="description" rows="4" placeholder="What will volunteers be doing? Are there any specific qualifications needed?" required></textarea>
             
             <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Publish Event</button>
-            
+
             <label>Event Duration (Hours)</label>
             <input type="number" name="hours" min="1" placeholder="e.g., 3" required>
             
