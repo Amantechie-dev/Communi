@@ -20,6 +20,7 @@ class Event(db.Model):
     description = db.Column(db.String(500), nullable=False)
     location = db.Column(db.String(200), nullable=False)
     organizer_email = db.Column(db.String(100), nullable=False) 
+    hours = db.Column(db.Integer, nullable=False, default=1)
 
 class Attendance(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -70,10 +71,11 @@ def create_event():
         title = request.form['title']
         description = request.form['description']
         location = request.form['location']
+        hours = int(request.form['hours']) 
         organizer = session['logged_in_user']
         
         
-        new_event = Event(title=title, description=description, location=location, organizer_email=organizer)
+        new_event = Event(title=title, description=description, location=location, hours=hours, organizer_email=organizer)
         db.session.add(new_event)
         db.session.commit()
         
@@ -120,8 +122,8 @@ def dashboard():
     my_attendances = Attendance.query.filter_by(user_email=user_email).all()
     joined_event_ids = [a.event_id for a in my_attendances]
     joined_events = Event.query.filter(Event.id.in_(joined_event_ids)).all()
-    
-    return render_template('dashboard.html', my_events=my_events, joined_events=joined_events)
+    total_hours = sum(event.hours for event in joined_events)
+    return render_template('dashboard.html', my_events=my_events, joined_events=joined_events,total_hours=total_hours)
 
 if __name__ == '__main__':
     app.run(debug=True)

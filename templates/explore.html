@@ -25,6 +25,7 @@
                     <span class="badge"> {{ event.location }}</span>
                     <h3>{{ event.title }}</h3>
                     <p style="color: #4b5563; line-height: 1.5;">{{ event.description }}</p>
+                    <p style="color: #9ca3af; font-size: 13px; font-weight: bold;">Earns: {{ event.hours }} Hours</p>
                     <p style="color: #9ca3af; font-size: 13px;">Organized by: {{ event.organizer_email }}</p>
                     
                     <a href="/join/{{ event.id }}" class="btn" style="margin-top: 10px;">Register & Join Event</a>
