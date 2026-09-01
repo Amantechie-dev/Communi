@@ -171,27 +171,27 @@ input:focus, textarea:focus {
     display: inline-block;
     margin-bottom: 10px;
 }
-/* Apply this to the main header element wrapping the logo and the links */
+
 .header-container {
     display: flex;
-    justify-content: space-between; /* Pushes the logo to the left and links to the right */
-    align-items: center; /* Vertically centers all items */
-    padding: 15px 20px; /* Gives the header some breathing room from the screen edges */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 20px; 
     box-sizing: border-box;
 }
 
-/* Apply this to the container holding 'Dashboard' and '+ Host Event' */
+
 .nav-actions {
     display: flex;
-    flex-direction: column; /* Stacks the text and button neatly on smaller screens */
-    align-items: flex-end; /* Aligns them to the right */
-    gap: 8px; /* Adds vertical space so they stop overlapping */
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 8px; 
 }
 
-/* Optional: If you want them side-by-side instead of stacked */
+
 .nav-actions-inline {
     display: flex;
     flex-direction: row; 
     align-items: center;
-    gap: 15px; /* Adds horizontal space between Dashboard and the button */
+    gap: 15px; 
 }
